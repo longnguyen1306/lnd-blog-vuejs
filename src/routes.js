@@ -1,5 +1,15 @@
-import Lienhe from "./components/Lienhe/Lienhe";
+import Danhmuc from "./components/Danhmuc/Danhmuc";
+import Home from "./components/Home";
 
 export default [
-    { path: '/lien-he', component: Lienhe },
+    {
+        path: '/',
+        name: 'home',
+        component: Home
+    },
+    {
+        path: '/danh-muc/:danhMucID',
+        name: 'Danhmuc',
+        component: Danhmuc
+    },
 ]
