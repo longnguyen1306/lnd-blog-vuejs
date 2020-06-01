@@ -61,6 +61,7 @@
     }
     .menu {
         border-top: 1px solid #dadada;
+        padding: 13px;
     }
     .menu-item {
         text-transform: uppercase;
