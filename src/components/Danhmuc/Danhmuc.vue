@@ -1,12 +1,18 @@
 <template>
-    <div class="hello">
-        <Header />
-        day là danh mục theo id  {{ $route.params.danhMucID }}
+    <div>
+        <b-container class="bv-example-row">
+            <b-row class="text-center">
+                <b-col cols="9">
+                    danh mục
+                </b-col>
+                <SiderbarRight />
+            </b-row>
+        </b-container>
     </div>
 </template>
 
 <script>
-    import Header from "../Header/Header";
+    import SiderbarRight from "../Home/SiderbarRight";
     export default {
         data() {
             return {
@@ -14,7 +20,7 @@
             }
         },
         components: {
-            Header,
+            SiderbarRight,
         }
     }
 </script>

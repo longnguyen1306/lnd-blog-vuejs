@@ -13,16 +13,13 @@
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
         >
-            <!-- Slides with custom text -->
-            <b-carousel-slide v-for="(slideList, index ) in slideLists" :img-src="slideList.slideUrl" v-bind:key="index"></b-carousel-slide>
-<!--            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=52"></b-carousel-slide>-->
-<!--            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>-->
-
+                <b-carousel-slide v-for="(slideList, index ) in slideLists" :img-src="slideList.slideUrl" v-bind:key="index" ></b-carousel-slide>
         </b-carousel>
     </div>
 </template>
 
 <script>
+
     export default {
         data() {
             return {
@@ -31,22 +28,24 @@
                 slideLists: [
                     {
                         id: 1,
-                        slideUrl: 'http://14.161.50.35:8088/wl/?id=SvcGsDLYxnUES4vwAnPXTzsfHZ9NQT7l',
+                        slideUrl: 'https://live.staticflickr.com/3685/33045905510_332644a681_h.jpg',
                     },
                     {
                         id: 1,
-                        slideUrl: 'http://14.161.50.35:8088/wl/?id=Hrq2KeLwVGOTGb1PdfbjSvf9BU2PEOJd',
+                        slideUrl: 'https://live.staticflickr.com/65535/49966759807_44fa8b66b8_h.jpg',
                     },
                     {
                         id: 1,
-                        slideUrl: 'http://14.161.50.35:8088/wl/?id=NFYIE5nOe9Z3dwTxZxlKj30Sh5jHKSfh',
+                        slideUrl: 'https://live.staticflickr.com/65535/49965975613_84680189c6_h.jpg',
                     },
                     {
                         id: 1,
-                        slideUrl: 'http://14.161.50.35:8088/wl/?id=GHJvQVSxaSMB3JLP1goarMjSx7rAojJq',
+                        slideUrl: 'https://live.staticflickr.com/65535/49965975483_508a36bcd8_h.jpg',
                     },
                 ]
             }
+        },
+        components: {
         },
         methods: {
             onSlideStart() {

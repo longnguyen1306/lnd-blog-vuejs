@@ -6,16 +6,26 @@ export default [
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
+        meta: {
+            title: 'Nested - About Page - Example App'
+        }
     },
     {
         path: '/danh-muc/:danhMucID',
         name: 'Danhmuc',
-        component: Danhmuc
+        component: Danhmuc,
+        meta: {
+            title: 'Login'
+        }
     },
     {
         path: '/chi-tiet-bai-viet/:baiVietID',
         name: 'chiTietBaiViet',
         component: Chitietbaiviet
+    },
+    {
+        path: '/facebook',
+        redirect: 'https://www.facebook.com/ldc.longnd'
     },
 ]

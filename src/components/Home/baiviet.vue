@@ -1,30 +1,37 @@
 <template>
     <div class="contnet-home">
-        <b-card
-                body-class="noidungbaiviet"
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-alt="Image"
-                img-top
-                tag="article"
-                class="mb-2"
-        >
-            <b-link :to="{ name: 'chiTietBaiViet', params: { baiVietID: 3 }}">
-               <h4> Tiêu đề bài viết</h4>
+        <b-card body-class="noidungbaiviet" class="mb-2" img-top>
+            <vue-load-image class="card">
+                <img slot="image" :src="listBaiViet.anhbaiViet" :alt="listBaiViet.tenBaiViet"/>
+                <img slot="preloader" src="../../assets/image-loader.gif" alt="loading"/>
+                <div slot="error">error message</div>
+            </vue-load-image>
+
+            <b-link :to="{ name: 'chiTietBaiViet', params: { baiVietID: listBaiViet.id }}">
+               <h4> {{ listBaiViet.tenBaiViet }}</h4>
             </b-link>
             <b-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid consequuntur deserunt doloremque, earum, et eveniet exercitationem id impedit, incidunt iste maiores perspiciatis rem reprehenderit saepe sit ullam unde veniam!
+                {{ listBaiViet.moTaNgan }}
             </b-card-text>
 
-            <router-link :to="{ name: 'chiTietBaiViet', params: { baiVietID: 3 }}" class="baiviet-xemtiep">
-                 Xem tiếp <b-icon icon="arrow-right-short" class="icon-xemtiep" ></b-icon>
+            <router-link :to="{ name: 'chiTietBaiViet', params: { baiVietID: listBaiViet.id }}" class="baiviet-xemtiep">
+                 Xem tiếp <b-icon icon="arrow-right-short" type="button" class="icon-xemtiep" ></b-icon>
             </router-link>
         </b-card>
     </div>
 </template>
 
 <script>
+    import VueLoadImage from 'vue-load-image'
     export default {
+        mounted() {
+
+        },
         components: {
+            VueLoadImage
+        },
+        props:['listBaiViet'],
+        methods: {
         }
     }
 </script>
@@ -64,10 +71,14 @@
         border: none;
         overflow: hidden;
     }
+    img {
+        max-height: 500px;
+        object-fit: cover;
+    }
     .card img {
         transition: transform .5s ease;
     }
-    .card:hover img {
+    .card img:hover {
         transform: scale(1.2);
     }
     .baiviet-xemtiep {

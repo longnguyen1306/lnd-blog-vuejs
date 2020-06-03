@@ -17,6 +17,13 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 
+//import material-icon scss
+import "font-awesome/css/font-awesome.min.css";
+
+//defined as global component
+Vue.component('VueFontawesome', require('vue-fontawesome-icon/VueFontawesome.vue').default);
+
+
 Vue.use(BootstrapVueIcons)
 
 Vue.config.productionTip = false;
